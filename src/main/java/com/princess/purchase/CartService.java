@@ -37,7 +37,7 @@ public class CartService {
   public void deleteCart(Long cartId){
     boolean idExists = cartRepository.existsById(cartId);
     if(!idExists){
-      throw new IllegalStateException("This id: " + cartId + "already exists");
+      throw new IllegalStateException("This id: " + cartId + "does not exist");
     }
     cartRepository.deleteById(cartId);;
   }
